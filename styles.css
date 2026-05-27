@@ -642,40 +642,36 @@ a { text-decoration: none; color: inherit; }
   .hero-text    { text-align: center; }
   .hero-sub     { margin-left: auto; margin-right: auto; }
   .hero-trust   { justify-content: center; }
-  .hero         { overflow: visible; }
+  .hero         { overflow: visible; padding-bottom: 48px; }
   .steps        { flex-direction: column; }
   .step-arrow   { display: none; }
 
-  /* ── Card scroll strip ── */
+  /* ── Card 2×2 grid ── */
   .hero-visual {
     display: block;
     width: 100%;
     padding-top: 0;
-    margin-top: 28px;
+    margin-top: 36px;
   }
   .cards-scene {
     position: static;
     width: 100%;
     height: auto;
-    display: flex;
-    flex-direction: row;
-    gap: 14px;
-    overflow-x: auto;
-    padding: 10px 5% 24px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0;
+    overflow: visible;
   }
-  .cards-scene::-webkit-scrollbar { display: none; }
-  .cards-scene::before             { display: none; }
+  .cards-scene::before { display: none; }
   .hero-visual .card-img-wrap {
     position: relative;
     top: auto; left: auto; right: auto; bottom: auto;
-    flex-shrink: 0;
-    width: 220px;
+    width: 100%;
     transform: none;
     animation: none;
     z-index: auto;
-    box-shadow: 0 10px 32px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.1);
   }
   .hero-visual .card-pos-amex,
   .hero-visual .card-pos-chase,
@@ -685,12 +681,12 @@ a { text-decoration: none; color: inherit; }
     animation: none;
     top: auto; left: auto; right: auto; bottom: auto;
   }
-  .card-earn-overlay { font-size: 9px; padding: 3px 8px; bottom: 8px; right: 8px; }
+  .card-earn-overlay { font-size: 9px; padding: 3px 7px; bottom: 6px; right: 6px; }
 }
 
 /* Tablet portrait */
 @media (max-width: 768px) {
-  .hero          { padding: 96px 5% 0; }
+  .hero          { padding: 96px 5% 40px; }
   .section       { padding: 56px 5%; }
   .section-header { margin-bottom: 32px; }
   .numbers-grid  { grid-template-columns: repeat(2, 1fr); }
@@ -704,7 +700,7 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 640px) {
   .nav-cta       { padding: 9px 16px; font-size: 13px; }
 
-  .hero          { padding: 84px 5% 0; }
+  .hero          { padding: 84px 5% 36px; }
   .hero-eyebrow  { font-size: 11px; padding: 5px 12px; white-space: normal; text-align: center; line-height: 1.5; }
   .hero-sub      { font-size: 0.95rem; }
 
@@ -734,7 +730,7 @@ a { text-decoration: none; color: inherit; }
   .nav-beta      { display: none; }
   .nav-cta       { padding: 8px 14px; font-size: 12px; }
 
-  .hero          { padding: 80px 5% 0; }
+  .hero          { padding: 80px 5% 32px; }
   .hero-h1       { font-size: clamp(1.8rem, 8vw, 2.3rem); }
   .hero-sub      { font-size: 0.93rem; line-height: 1.65; margin-bottom: 28px; }
   .waitlist-btn  { font-size: 15px; padding: 15px; }
@@ -764,7 +760,6 @@ a { text-decoration: none; color: inherit; }
   .footer-legal  { font-size: 10.5px; }
   .footer-bottom { font-size: 11px; }
 
-  .hero-visual .card-img-wrap { width: 190px; }
 }
 
 /* iPhone SE / very small screens */
@@ -773,5 +768,5 @@ a { text-decoration: none; color: inherit; }
   .hero-eyebrow  { font-size: 10px; }
   .section-h2    { font-size: 1.4rem; }
   .number-val    { font-size: 1.7rem; }
-  .hero-visual .card-img-wrap { width: 165px; }
+  .cards-scene   { gap: 8px; }
 }
