@@ -636,21 +636,22 @@ a { text-decoration: none; color: inherit; }
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 
-/* Tablet landscape: collapse to single column */
+/* Collapse hero to single column below 960px */
 @media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 0; }
-  .hero-text  { text-align: center; }
-  .hero-sub   { margin-left: auto; margin-right: auto; }
-  .hero-trust { justify-content: center; }
-  .hero       { overflow: visible; } /* allow card strip to show */
+  .hero-inner   { grid-template-columns: 1fr; gap: 0; }
+  .hero-text    { text-align: center; }
+  .hero-sub     { margin-left: auto; margin-right: auto; }
+  .hero-trust   { justify-content: center; }
+  .hero         { overflow: visible; }
+  .steps        { flex-direction: column; }
+  .step-arrow   { display: none; }
 
-  /* Card scroll strip */
+  /* ── Card scroll strip ── */
   .hero-visual {
     display: block;
     width: 100%;
     padding-top: 0;
-    margin-top: 32px;
-    padding-bottom: 12px;
+    margin-top: 28px;
   }
   .cards-scene {
     position: static;
@@ -660,109 +661,114 @@ a { text-decoration: none; color: inherit; }
     flex-direction: row;
     gap: 14px;
     overflow-x: auto;
-    overflow-y: hidden;
-    padding: 8px 5% 20px;
+    overflow-y: visible;
+    padding: 10px 5% 24px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .cards-scene::-webkit-scrollbar { display: none; }
-  .cards-scene::before { display: none; }
-
+  .cards-scene::before             { display: none; }
   .card-img-wrap {
     position: relative;
     top: auto; left: auto; right: auto;
     flex-shrink: 0;
-    width: 200px;
-    transform: none; /* flat — no rotation in strip */
+    width: 220px;
+    transform: none;
     animation: none;
     z-index: auto;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
   }
-  .card-pos-amex, .card-pos-chase,
-  .card-pos-avios, .card-pos-virgin { transform: none; }
-
-  .card-earn-overlay {
-    font-size: 9px;
-    padding: 3px 8px;
-    bottom: 8px;
-    right: 8px;
-  }
-
-  .steps        { flex-direction: column; }
-  .step-arrow   { display: none; }
-  .section-header { margin-bottom: 36px; }
+  .card-pos-amex,
+  .card-pos-chase,
+  .card-pos-avios,
+  .card-pos-virgin { transform: none; }
+  .card-earn-overlay { font-size: 9px; padding: 3px 8px; bottom: 8px; right: 8px; }
 }
 
 /* Tablet portrait */
 @media (max-width: 768px) {
-  .hero         { padding: 96px 5% 16px; }
-  .section      { padding: 56px 5%; }
-  .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero          { padding: 96px 5% 0; }
+  .section       { padding: 56px 5%; }
+  .section-header { margin-bottom: 32px; }
+  .numbers-grid  { grid-template-columns: repeat(2, 1fr); }
   .number-card:nth-child(2) { border-right: none; }
   .number-card:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.08); }
-  .cta-inner    { padding: 48px 32px; }
+  .cta-inner     { padding: 48px 32px; }
   .footer-bottom { flex-direction: column; gap: 6px; }
 }
 
-/* Large phone */
+/* Large phone — form stacks, table simplifies */
 @media (max-width: 640px) {
-  .nav-cta      { padding: 9px 16px; font-size: 13px; }
-  .hero         { padding: 86px 5% 12px; }
-  .hero-eyebrow { font-size: 11px; padding: 5px 12px; max-width: 90vw; white-space: normal; text-align: center; }
-  .section      { padding: 48px 5%; }
+  .nav-cta       { padding: 9px 16px; font-size: 13px; }
+
+  .hero          { padding: 84px 5% 0; }
+  .hero-eyebrow  { font-size: 11px; padding: 5px 12px; white-space: normal; text-align: center; line-height: 1.5; }
+  .hero-sub      { font-size: 0.95rem; }
+
+  /* Stack form inputs */
+  .waitlist-fields  { flex-direction: column; }
+  .waitlist-email,
+  .waitlist-select  { flex: none; width: 100%; }
+
+  .section       { padding: 48px 5%; }
   .section-header { margin-bottom: 24px; }
 
-  /* Gap table: keep only payment name + earn column */
-  .gap-table    { font-size: 13px; }
-  .gap-row      { grid-template-columns: 1fr auto; padding: 12px 16px; gap: 8px; }
-  .gap-header   { display: none; }
-  .gap-amount, .gap-before { display: none; }
-  .gap-after    { justify-self: end; }
+  /* Gap table — payment name + earn badge only */
+  .gap-row       { grid-template-columns: 1fr auto; padding: 11px 16px; gap: 10px; align-items: center; }
+  .gap-header    { display: none; }
+  .gap-amount,
+  .gap-before    { display: none; }
+  .gap-after     { justify-self: end; }
+  .badge-earn    { font-size: 11px; padding: 3px 9px; white-space: nowrap; }
+  .gap-payment   { font-size: 13px; }
 
-  .cta-inner    { padding: 40px 24px; border-radius: 22px; }
-  .footer       { padding: 40px 5% 28px; }
+  .cta-inner     { padding: 40px 24px; border-radius: 22px; }
+  .footer        { padding: 40px 5% 28px; }
 }
 
 /* Small phone */
 @media (max-width: 480px) {
-  .nav-beta     { display: none; }
-  .nav-cta      { padding: 8px 14px; font-size: 12px; }
+  .nav-beta      { display: none; }
+  .nav-cta       { padding: 8px 14px; font-size: 12px; }
 
-  .hero         { padding: 82px 5% 8px; }
-  .hero-h1      { font-size: clamp(1.85rem, 8vw, 2.4rem); }
-  .hero-sub     { font-size: 0.95rem; line-height: 1.65; }
-  .section      { padding: 40px 5%; }
-
-  .waitlist-fields { flex-direction: column; }
-  .waitlist-email,
-  .waitlist-select { flex: none; width: 100%; }
+  .hero          { padding: 80px 5% 0; }
+  .hero-h1       { font-size: clamp(1.8rem, 8vw, 2.3rem); }
+  .hero-sub      { font-size: 0.93rem; line-height: 1.65; margin-bottom: 28px; }
   .waitlist-btn  { font-size: 15px; padding: 15px; }
 
-  .use-case     { flex-direction: column; gap: 12px; padding: 18px; }
-  .uc-icon      { width: 44px; height: 44px; }
-  .uc-desc      { font-size: 0.85rem; }
+  .section       { padding: 40px 5%; }
+  .section-h2    { font-size: clamp(1.5rem, 5.5vw, 1.85rem); }
 
-  .numbers-grid { grid-template-columns: 1fr 1fr; }
-  .number-card  { border-right: none !important; padding: 28px 16px; }
-  .number-val   { font-size: 2rem; }
-  .number-label { font-size: 0.78rem; }
+  .use-case      { flex-direction: column; gap: 10px; padding: 18px; }
+  .uc-icon       { width: 44px; height: 44px; }
+  .uc-desc       { font-size: 0.85rem; }
+  .uc-title      { font-size: 0.95rem; }
 
-  .step         { padding: 22px 18px; }
-  .section-h2   { font-size: clamp(1.55rem, 5.5vw, 1.9rem); }
+  .numbers-grid  { grid-template-columns: 1fr 1fr; }
+  .number-card   { border-right: none !important; padding: 28px 14px; }
+  .number-val    { font-size: 1.9rem; }
+  .number-label  { font-size: 0.77rem; }
 
-  .cta-inner    { padding: 36px 18px; border-radius: 18px; }
-  .cta-h2       { font-size: clamp(1.5rem, 6vw, 2rem); }
-  .cta-sub      { font-size: 0.9rem; }
+  .step          { padding: 22px 18px; }
+  .step-title    { font-size: 0.95rem; }
+  .step-desc     { font-size: 0.84rem; }
 
-  .footer-bottom { font-size: 11px; }
+  .cta-inner     { padding: 36px 20px; border-radius: 18px; }
+  .cta-h2        { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .cta-sub       { font-size: 0.88rem; }
+
+  .footer-desc   { font-size: 13px; }
   .footer-legal  { font-size: 10.5px; }
+  .footer-bottom { font-size: 11px; }
+
+  .card-img-wrap { width: 190px; }
 }
 
-/* iPhone SE / very small */
+/* iPhone SE / very small screens */
 @media (max-width: 380px) {
-  .hero-h1      { font-size: 1.75rem; }
-  .hero-eyebrow { font-size: 10px; }
-  .number-val   { font-size: 1.75rem; }
-  .section-h2   { font-size: 1.45rem; }
-  .card-img-wrap { width: 172px; }
+  .hero-h1       { font-size: 1.7rem; }
+  .hero-eyebrow  { font-size: 10px; }
+  .section-h2    { font-size: 1.4rem; }
+  .number-val    { font-size: 1.7rem; }
+  .card-img-wrap { width: 165px; }
 }
