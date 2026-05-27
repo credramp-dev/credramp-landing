@@ -219,6 +219,7 @@ a { text-decoration: none; color: inherit; }
 }
 .waitlist-btn:hover { background: var(--magenta-l); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(224,53,122,0.4); }
 .waitlist-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+.tally-btn { display: block; text-align: center; text-decoration: none; }
 .waitlist-note {
   font-size: 12px;
   color: var(--muted);

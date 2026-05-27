@@ -49,48 +49,11 @@
           Every month, thousands of pounds leave your account earning nothing. Rent. Childcare. Care fees. Invoices. They only accept bank transfer — so your rewards card sits on the sidelines. CredRamp changes that. Pay by card, earn on every pound. They receive a bank transfer as normal.
         </p>
 
-        <!-- Waitlist form -->
-        <!-- ============================================================
-             FORMSPREE SETUP (takes 2 minutes):
-             1. Go to https://formspree.io and create a free account
-             2. Click "New Form", give it a name like "CredRamp Waitlist"
-             3. Copy your form endpoint — looks like:
-                https://formspree.io/f/xabcdefg
-             4. Replace YOUR_FORM_ID below with your actual ID (e.g. xabcdefg)
-             ============================================================ -->
-        <form class="waitlist-form" id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="waitlist-fields">
-            <input
-              type="email"
-              name="email"
-              class="waitlist-email"
-              placeholder="Your email address"
-              required
-              autocomplete="email"
-            />
-            <select name="use_case" class="waitlist-select" required>
-              <option value="" disabled selected>I want to earn rewards on…</option>
-              <option value="rent">Rent</option>
-              <option value="childcare">Childcare / nursery / childminder</option>
-              <option value="care_fees">Adult care / care home fees</option>
-              <option value="contractors">Contractors or freelancers</option>
-              <option value="suppliers">Business suppliers</option>
-              <option value="other">Something else</option>
-            </select>
-          </div>
-          <button type="submit" class="waitlist-btn">Notify me when we launch →</button>
-          <p class="waitlist-note">No spam. No commitment. Just an early access invite when we're ready.</p>
-        </form>
-
-        <!-- Success state (shown after submit) -->
-        <div class="waitlist-success" id="waitlist-success">
-          <div class="success-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div class="success-title">You're on the list!</div>
-          <p class="success-sub">We'll send your early access invite to that address. In the meantime, feel free to share CredRamp with anyone who could benefit.</p>
-          <button class="share-btn" onclick="shareCredRamp()">Share CredRamp →</button>
-        </div>
+        <!-- Tally survey CTA -->
+        <a href="https://tally.so/r/kdkM0Z" target="_blank" rel="noopener" class="waitlist-btn tally-btn">
+          Get early access →
+        </a>
+        <p class="waitlist-note">2–3 minutes · Shapes what we build · No spam</p>
 
         <div class="hero-trust">
           <span>
@@ -340,31 +303,11 @@
       <h2 class="cta-h2">Your card should work<br /><em>harder than that.</em></h2>
       <p class="cta-sub">You pay a premium for a rewards card. You deserve to earn on every pound you spend — not just the easy ones. CredRamp is launching soon. Get early access.</p>
 
-      <form class="waitlist-form cta-form" id="cta-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="waitlist-fields">
-          <input type="email" name="email" class="waitlist-email" placeholder="Your email address" required autocomplete="email" />
-          <select name="use_case" class="waitlist-select" required>
-            <option value="" disabled selected>I want to earn rewards on…</option>
-            <option value="rent">Rent</option>
-            <option value="childcare">Childcare / nursery / childminder</option>
-            <option value="care_fees">Adult care / care home fees</option>
-            <option value="contractors">Contractors or freelancers</option>
-            <option value="suppliers">Business suppliers</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-        <button type="submit" class="waitlist-btn">Get early access →</button>
-        <p class="waitlist-note" style="color:rgba(255,255,255,0.45)">No spam. No commitment. Just your invite.</p>
-      </form>
-
-      <div class="waitlist-success cta-success" id="cta-success">
-        <div class="success-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <div class="success-title" style="color:#fff">You're on the list!</div>
-        <p class="success-sub" style="color:rgba(255,255,255,0.6)">We'll send your early access invite when we launch. Tell a friend who'd benefit too.</p>
-        <button class="share-btn share-btn-light" onclick="shareCredRamp()">Share CredRamp →</button>
-      </div>
+      <!-- Tally survey CTA -->
+      <a href="https://tally.so/r/kdkM0Z" target="_blank" rel="noopener" class="waitlist-btn tally-btn">
+        Take the 3-minute survey →
+      </a>
+      <p class="waitlist-note" style="color:rgba(255,255,255,0.45)">Your answers shape the product · No spam</p>
 
     </div>
   </section>
