@@ -661,16 +661,15 @@ a { text-decoration: none; color: inherit; }
     flex-direction: row;
     gap: 14px;
     overflow-x: auto;
-    overflow-y: visible;
     padding: 10px 5% 24px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .cards-scene::-webkit-scrollbar { display: none; }
   .cards-scene::before             { display: none; }
-  .card-img-wrap {
+  .hero-visual .card-img-wrap {
     position: relative;
-    top: auto; left: auto; right: auto;
+    top: auto; left: auto; right: auto; bottom: auto;
     flex-shrink: 0;
     width: 220px;
     transform: none;
@@ -678,10 +677,14 @@ a { text-decoration: none; color: inherit; }
     z-index: auto;
     box-shadow: 0 10px 32px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
   }
-  .card-pos-amex,
-  .card-pos-chase,
-  .card-pos-avios,
-  .card-pos-virgin { transform: none; }
+  .hero-visual .card-pos-amex,
+  .hero-visual .card-pos-chase,
+  .hero-visual .card-pos-avios,
+  .hero-visual .card-pos-virgin {
+    transform: none;
+    animation: none;
+    top: auto; left: auto; right: auto; bottom: auto;
+  }
   .card-earn-overlay { font-size: 9px; padding: 3px 8px; bottom: 8px; right: 8px; }
 }
 
@@ -761,7 +764,7 @@ a { text-decoration: none; color: inherit; }
   .footer-legal  { font-size: 10.5px; }
   .footer-bottom { font-size: 11px; }
 
-  .card-img-wrap { width: 190px; }
+  .hero-visual .card-img-wrap { width: 190px; }
 }
 
 /* iPhone SE / very small screens */
@@ -770,5 +773,5 @@ a { text-decoration: none; color: inherit; }
   .hero-eyebrow  { font-size: 10px; }
   .section-h2    { font-size: 1.4rem; }
   .number-val    { font-size: 1.7rem; }
-  .card-img-wrap { width: 165px; }
+  .hero-visual .card-img-wrap { width: 165px; }
 }
